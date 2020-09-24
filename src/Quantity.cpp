@@ -1,18 +1,18 @@
-#include "Length.hpp"
+#include "Quantity.hpp"
 
-Length::Length(Unit unit, double value)
+Quantity::Quantity(Unit unit, double value)
 {
     this->value = value;
     this->unit = unit;
 }
 
-bool Length::operator==(Length that) const
+bool Quantity::operator==(Quantity that) const
 {
     return (this->value == that.value &&
             typeid(this->value).name() == typeid(that.value).name());
 }
 
-bool Length::operator==(Length *that) const
+bool Quantity::operator==(Quantity *that) const
 {
     if (that == nullptr)
         return false;
@@ -20,12 +20,12 @@ bool Length::operator==(Length *that) const
             typeid(this->value).name() == typeid(that->value).name());
 }
 
-bool Length::compare(Length that)
+bool Quantity::compare(Quantity that)
 {
     return this->unit.get_base(this->value) == that.unit.get_base(that.value);
 }
 
-double Length::operator+(Length that)
+double Quantity::operator+(Quantity that)
 {
     return this->unit.get_base(this->value) + that.unit.get_base(that.value);
 }

@@ -4,10 +4,17 @@
 
 using namespace std;
 
+enum Qunatity_Types
+{
+    LENGTH,
+    VOLUME
+};
+
 class Unit
 {
     double conversion_factor;
-    Unit(double conversion_factor);
+    Qunatity_Types quantity_type;
+    Unit(double conversion_factor, Qunatity_Types quantity_type);
 
 public:
     Unit();
@@ -15,6 +22,9 @@ public:
     static Unit FEET;
     static Unit YARD;
     static Unit CM;
+    static Unit GALLON;
+    static Unit LITRE;
+    static Unit ML;
 
     double get_base(double value);
 };
