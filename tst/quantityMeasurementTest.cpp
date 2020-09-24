@@ -168,6 +168,27 @@ TEST(Volume_Test, given1LitreAnd1000ml_whenAdded_returnsResult)
     ASSERT_EQ(2.0, litre + ml);
 }
 
+TEST(Weight_Test, given1KgAnd1000Grams_whenCompared_returnsTrue)
+{
+    Quantity kg(Unit::KG, 1.0);
+    Quantity grams(Unit::GRAM, 1000);
+    ASSERT_TRUE(kg.compare(grams));
+}
+
+TEST(Weight_Test, given1000KgAnd1Ton_whenCompared_returnsTrue)
+{
+    Quantity kg(Unit::KG, 1000.0);
+    Quantity tonne(Unit::TONNE, 1.0);
+    ASSERT_TRUE(kg.compare(tonne));
+}
+
+TEST(Weight_Test, given1TonneAnd1000Grams_whenAdded_returnsResult)
+{
+    Quantity grams(Unit::GRAM, 1000.0);
+    Quantity tonne(Unit::TONNE, 1.0);
+    ASSERT_EQ(1001.0, grams + tonne);
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);

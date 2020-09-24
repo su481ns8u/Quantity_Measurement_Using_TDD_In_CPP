@@ -7,7 +7,8 @@ using namespace std;
 enum Qunatity_Types
 {
     LENGTH,
-    VOLUME
+    VOLUME,
+    WEIGHT
 };
 
 class Unit
@@ -22,9 +23,14 @@ public:
     static Unit FEET;
     static Unit YARD;
     static Unit CM;
+
     static Unit GALLON;
     static Unit LITRE;
     static Unit ML;
+
+    static Unit KG;
+    static Unit GRAM;
+    static Unit TONNE;
 
     double get_base(double value);
 };

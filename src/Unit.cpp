@@ -17,6 +17,10 @@ Unit Unit::GALLON(3.78, VOLUME);
 Unit Unit::LITRE(1.0, VOLUME);
 Unit Unit::ML(0.001, VOLUME);
 
+Unit Unit::KG(1.0, WEIGHT);
+Unit Unit::GRAM(0.001, WEIGHT);
+Unit Unit::TONNE(1000, WEIGHT);
+
 double Unit::get_base(double value)
 {
     return this->conversion_factor * value;
