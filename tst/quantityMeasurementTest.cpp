@@ -105,6 +105,12 @@ TEST(Length_Test, given36inchAnd1Yard_whenCompared_returnTrue)
     ASSERT_TRUE(inch.compare(yard));
 }
 
+TEST(Length_Test, given5cmAnd2inch_whenCompared_returnsTrue)
+{
+    Length cm(Unit::CM, 5);
+    Length inch(Unit::INCH, 2);
+    ASSERT_TRUE(inch.compare(cm));
+}
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);
