@@ -111,6 +111,35 @@ TEST(Length_Test, given5cmAnd2inch_whenCompared_returnsTrue)
     Length inch(Unit::INCH, 2);
     ASSERT_TRUE(inch.compare(cm));
 }
+
+TEST(Length_Test, given2inchAnd2inch_whenAdded_returnsResult)
+{
+    Length inch1(Unit::INCH, 2.0);
+    Length inch2(Unit::INCH, 2.0);
+    ASSERT_EQ(4.0, inch1 + inch2);
+}
+
+TEST(Length_Test, given1ftAnd2inch_whenAdded_returnsResult)
+{
+    Length feet(Unit::FEET, 1.0);
+    Length inch(Unit::INCH, 2.0);
+    ASSERT_EQ(14.0, feet + inch);
+}
+
+TEST(Length_Test, given1ftAnd1ft_whenAdded_returnsResult)
+{
+    Length feet1(Unit::FEET, 1.0);
+    Length feet2(Unit::FEET, 1.0);
+    ASSERT_EQ(24.0, feet1 + feet2);
+}
+
+TEST(Length_Test, given2inchAnd5by2cm_whenAdded_returnsResult)
+{
+    Length cm(Unit::CM, 2.5);
+    Length inch(Unit::INCH, 2.0);
+    ASSERT_EQ(3.0, cm + inch);
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);

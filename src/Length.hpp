@@ -10,10 +10,11 @@ class Length
     Unit unit;
 
 public:
-    Length(Unit, double);
-    bool operator==(Length) const;
-    bool operator==(Length *) const;
-    bool Length::compare(Length that);
+    Length(Unit unit, double value);
+    bool operator==(Length that) const;
+    bool operator==(Length *that) const;
+    bool compare(Length that);
+    double operator+(Length that);
 };
 
 #endif

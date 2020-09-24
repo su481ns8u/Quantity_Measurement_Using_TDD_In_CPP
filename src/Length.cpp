@@ -20,6 +20,12 @@ bool Length::operator==(Length *that) const
             typeid(this->value).name() == typeid(that->value).name());
 }
 
-bool Length::compare(Length that) {
+bool Length::compare(Length that)
+{
     return this->unit.get_base(this->value) == that.unit.get_base(that.value);
+}
+
+double Length::operator+(Length that)
+{
+    return this->unit.get_base(this->value) + that.unit.get_base(that.value);
 }
