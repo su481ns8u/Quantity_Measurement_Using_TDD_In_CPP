@@ -13,6 +13,7 @@ public:
     Unit();
     static Unit INCH;
     static Unit FEET;
+    static Unit YARD;
 
     double get_base(double value);
 };
