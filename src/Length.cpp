@@ -1,17 +1,18 @@
-#include "Feet.hpp"
+#include "Length.hpp"
 
-Feet::Feet(double value)
+Length::Length(Unit unit, double value)
 {
     this->value = value;
+    this->unit = unit;
 }
 
-bool Feet::operator==(Feet that) const
+bool Length::operator==(Length that) const
 {
     return (this->value == that.value &&
             typeid(this->value).name() == typeid(that.value).name());
 }
 
-bool Feet::operator==(Feet *that) const
+bool Length::operator==(Length *that) const
 {
     if (that == nullptr)
         return false;

@@ -7,8 +7,10 @@ add_subdirectory(googletest)
 include_directories(googletest/include)
 
 add_executable(executeTests 
-    src/Feet.cpp
-    src/Feet.hpp
+    src/Length.cpp
+    src/Length.hpp
+    src/Unit.cpp
+    src/Unit.hpp
     tst/quantityMeasurementTest.cpp
 )
 
