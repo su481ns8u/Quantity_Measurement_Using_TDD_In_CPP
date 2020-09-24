@@ -77,11 +77,32 @@ TEST(Length_Test, given1feetAnd12Inch_WhenComapred_ReturnTrue)
     ASSERT_TRUE(feet.compare(inch));
 }
 
-TEST(Length_Test, given3feetAnd1Yard_whenCompared_returnYrue)
+TEST(Length_Test, given3feetAnd1Yard_whenCompared_returnTrue)
 {
     Length feet(Unit::FEET, 3.0);
     Length yard(Unit::YARD, 1.0);
     ASSERT_TRUE(feet.compare(yard));
+}
+
+TEST(Length_Test, given1feetAnd1Yard_whenCompared_returnFalse)
+{
+    Length feet(Unit::FEET, 1.0);
+    Length yard(Unit::YARD, 1.0);
+    ASSERT_FALSE(feet.compare(yard));
+}
+
+TEST(Length_Test, given1inchAnd1Yard_whenCompared_returnFalse)
+{
+    Length inch(Unit::INCH, 1.0);
+    Length yard(Unit::YARD, 1.0);
+    ASSERT_FALSE(inch.compare(yard));
+}
+
+TEST(Length_Test, given36inchAnd1Yard_whenCompared_returnTrue)
+{
+    Length inch(Unit::INCH, 36.0);
+    Length yard(Unit::YARD, 1.0);
+    ASSERT_TRUE(inch.compare(yard));
 }
 
 int main(int argc, char **argv)
