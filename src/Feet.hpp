@@ -11,6 +11,7 @@ class Feet
 public:
     Feet(double);
     bool operator==(Feet) const;
+    bool operator==(Feet *) const;
 };
 
 #endif

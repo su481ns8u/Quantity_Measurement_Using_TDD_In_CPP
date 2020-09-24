@@ -8,6 +8,13 @@ TEST(Length_Test, given0FeetAnd0Feet_returnsEqual)
     ASSERT_EQ(feet_1, feet_2);
 }
 
+TEST(Length_Test, given0feetAndNull_shouldReturnNotEqual)
+{
+    Feet *feet_1 = new Feet(0);
+    Feet *feet_2 = new Feet(NULL);
+    ASSERT_NE(feet_1, feet_2);
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);
