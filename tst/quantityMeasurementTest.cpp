@@ -22,6 +22,12 @@ TEST(Length_Test, givenSameReferanceOfObject_shouldReturnEqual)
     ASSERT_EQ(feet_1, feet_2);
 }
 
+TEST(Length_Test, givenTwoSameUnitsWithDifferentValues_shouldReturnNotEqual) {
+    Feet feet_1(0);
+    Feet feet_2(1);
+    ASSERT_FALSE(feet_1 == feet_2);
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);
