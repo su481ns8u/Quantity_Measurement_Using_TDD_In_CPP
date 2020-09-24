@@ -13,6 +13,7 @@ public:
     Length(Unit, double);
     bool operator==(Length) const;
     bool operator==(Length *) const;
+    bool Length::compare(Length that);
 };
 
 #endif

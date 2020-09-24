@@ -13,6 +13,8 @@ public:
     Unit();
     static Unit INCH;
     static Unit FEET;
+
+    double get_base(double value);
 };
 
 #endif
