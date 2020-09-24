@@ -36,6 +36,12 @@ TEST(Length_Test, given0InchAnd0Inch_WhenCheckedEqual_ShouldReturnTrue)
     ASSERT_EQ(inch_1, inch_2);
 }
 
+TEST(Length_Test, given0inchAndNullInch_whenCheckedForEquality_ShouldReturnFalse)
+{
+    Length inch_1(Unit::INCH, 0);
+    ASSERT_FALSE(inch_1 == nullptr);
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);
