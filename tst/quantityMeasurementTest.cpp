@@ -154,6 +154,20 @@ TEST(Volume_Test, given1LitreAnd1000ml_whenComapred_returnsTrue)
     ASSERT_TRUE(litre.compare(ml));
 }
 
+TEST(Volume_Test, given1GallonAnd3point78Liters_whenAdded_returnsResult)
+{
+    Quantity gallon(Unit::GALLON, 1.0);
+    Quantity litre(Unit::LITRE, 3.78);
+    ASSERT_EQ(7.56, gallon + litre);
+}
+
+TEST(Volume_Test, given1LitreAnd1000ml_whenAdded_returnsResult)
+{
+    Quantity litre(Unit::LITRE, 1.0);
+    Quantity ml(Unit::ML, 1000.0);
+    ASSERT_EQ(2.0, litre + ml);
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);
