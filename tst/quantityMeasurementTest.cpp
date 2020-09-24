@@ -63,6 +63,13 @@ TEST(Length_Test, given0FeetAnd0Inch_WhenCompared_ReturnsTrue)
     ASSERT_TRUE(feet.compare(inch));
 }
 
+TEST(Length_Test, given1feetAnd1inch_WhenCompared_ReturnFalse)
+{
+    Length feet(Unit::FEET, 1.0);
+    Length inch(Unit::INCH, 1.0);
+    ASSERT_FALSE(feet.compare(inch));
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);
