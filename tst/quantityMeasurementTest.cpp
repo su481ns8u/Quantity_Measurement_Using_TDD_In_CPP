@@ -1,8 +1,11 @@
 #include <gtest/gtest.h>
+#include "../src/Feet.hpp"
 
 TEST(Length_Test, given0FeetAnd0Feet_returnsEqual)
 {
-    ASSERT_TRUE(true);
+    Feet feet_1(0);
+    Feet feet_2(0);
+    ASSERT_EQ(feet_1, feet_2);
 }
 
 int main(int argc, char **argv)
