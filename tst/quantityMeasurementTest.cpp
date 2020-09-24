@@ -42,6 +42,13 @@ TEST(Length_Test, given0inchAndNullInch_whenCheckedForEquality_ShouldReturnFalse
     ASSERT_FALSE(inch_1 == nullptr);
 }
 
+TEST(Length_Test, givenReferancesToSameObject_WhenCompared_ReturnsEqual)
+{
+    Length *inch_1 = new Length(Unit::INCH, 0);
+    Length *inch_2 = inch_1;
+    ASSERT_EQ(inch_1, inch_2);
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);
