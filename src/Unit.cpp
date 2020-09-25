@@ -21,7 +21,17 @@ Unit Unit::KG(1.0, WEIGHT);
 Unit Unit::GRAM(0.001, WEIGHT);
 Unit Unit::TONNE(1000, WEIGHT);
 
+Unit Unit::CELSIUS(1.0, TEMPERATURE);
+Unit Unit::FAHREANHEAT(5.0 / 9.0, TEMPERATURE);
+
 double Unit::get_base(double value)
 {
     return this->conversion_factor * value;
+}
+
+double Unit::get_base_for_temp(double value)
+{
+    if (this->conversion_factor == 5.0 / 9.0)
+        return (value - 32) * this->conversion_factor;
+    return value;
 }

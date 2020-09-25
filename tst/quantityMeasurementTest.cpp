@@ -189,6 +189,13 @@ TEST(Weight_Test, given1TonneAnd1000Grams_whenAdded_returnsResult)
     ASSERT_EQ(1001.0, grams + tonne);
 }
 
+TEST(Temperature_Test, given212FAnd100C_whenCompared_returnsTrue)
+{
+    Quantity far(Unit::FAHREANHEAT, 212.0);
+    Quantity cel(Unit::CELSIUS, 100.0);
+    ASSERT_TRUE(far.compare(cel));
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);

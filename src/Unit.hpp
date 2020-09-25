@@ -8,17 +8,22 @@ enum Qunatity_Types
 {
     LENGTH,
     VOLUME,
-    WEIGHT
+    WEIGHT,
+    TEMPERATURE
 };
 
 class Unit
 {
-    double conversion_factor;
+public:
     Qunatity_Types quantity_type;
+
+private:
+    double conversion_factor;
     Unit(double conversion_factor, Qunatity_Types quantity_type);
 
 public:
     Unit();
+
     static Unit INCH;
     static Unit FEET;
     static Unit YARD;
@@ -32,7 +37,11 @@ public:
     static Unit GRAM;
     static Unit TONNE;
 
+    static Unit CELSIUS;
+    static Unit FAHREANHEAT;
+
     double get_base(double value);
+    double get_base_for_temp(double value);
 };
 
 #endif

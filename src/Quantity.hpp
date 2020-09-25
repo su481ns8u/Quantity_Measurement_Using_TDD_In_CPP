@@ -14,6 +14,7 @@ public:
     bool operator==(Quantity that) const;
     bool operator==(Quantity *that) const;
     bool compare(Quantity that);
+    // bool compare_temperatures(Quantity that);
     double operator+(Quantity that);
 };
 
