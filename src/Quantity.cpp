@@ -27,10 +27,6 @@ bool Quantity::compare(Quantity that)
     return this->unit.get_base_for_temp(this->value) == that.unit.get_base_for_temp(that.value);
 }
 
-// bool Quantity::compare_temperatures(Quantity that)
-// {
-// }
-
 double Quantity::operator+(Quantity that)
 {
     return this->unit.get_base(this->value) + that.unit.get_base(that.value);
