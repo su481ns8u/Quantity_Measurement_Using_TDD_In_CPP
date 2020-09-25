@@ -16,9 +16,9 @@ class Unit
 {
 public:
     Qunatity_Types quantity_type;
+    double conversion_factor;
 
 private:
-    double conversion_factor;
     Unit(double conversion_factor, Qunatity_Types quantity_type);
 
 public:
@@ -41,7 +41,6 @@ public:
     static Unit FAHREANHEAT;
 
     double get_base(double value);
-    double get_base_for_temp(double value);
 };
 
 #endif

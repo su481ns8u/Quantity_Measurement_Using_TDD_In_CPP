@@ -16,15 +16,12 @@ bool Quantity::operator==(Quantity *that) const
 {
     if (that == nullptr)
         return false;
-    return (this->value == that->value &&
-            typeid(this->value).name() == typeid(that->value).name());
+    return (this->value == that->value && typeid(this->value).name() == typeid(that->value).name());
 }
 
 bool Quantity::compare(Quantity that)
 {
-    if (this->unit.quantity_type != TEMPERATURE)
-        return this->unit.get_base(this->value) == that.unit.get_base(that.value);
-    return this->unit.get_base_for_temp(this->value) == that.unit.get_base_for_temp(that.value);
+    return this->unit.get_base(this->value) == that.unit.get_base(that.value);
 }
 
 double Quantity::operator+(Quantity that)
